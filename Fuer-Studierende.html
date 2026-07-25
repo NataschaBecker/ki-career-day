@@ -85,7 +85,26 @@
         <div style="color: #fff; font-weight: 900; font-size: 24px; margin-bottom: 8px;">16. November 2027 · Campus Westend</div>
         <div style="color: #A6A9B3; font-size: 15px;">Der Eintritt für Studierende und Absolvent:innen ist frei.</div>
       </div>
-      <a href="Programm.html" style="background: #fff; color: #14161C; font-weight: 700; padding: 15px 30px; border-radius: 4px; font-size: 16px;">Zum Programm</a>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+        <a href="#vormerken-form" style="background: transparent; color: #fff; font-weight: 700; padding: 15px 30px; border-radius: 4px; font-size: 16px; border: 1px solid #fff;">Jetzt vormerken</a>
+        <a href="Programm.html" style="background: #fff; color: #14161C; font-weight: 700; padding: 15px 30px; border-radius: 4px; font-size: 16px;">Zum Programm</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="vormerken-form" style="padding: 0 56px 80px;">
+    <div style="max-width: 700px; margin: 0 auto; border: 1px solid #E7E7E2; border-radius: 8px; padding: 40px;">
+      <h2 style="font-size: 22px; font-weight: 900; margin-bottom: 8px;">Jetzt vormerken</h2>
+      <p style="font-size: 15px; color: #4A4D57; line-height: 1.6; margin-bottom: 24px;">Trag dich ein und wir informieren dich regelmäßig über Neuerungen des Programms, der Aussteller und der Messe.</p>
+      <form action="https://formsubmit.co/info@uni-careers.de" method="POST" style="display: flex; flex-direction: column; gap: 14px;">
+        <input type="hidden" name="_subject" value="Vormerkung KI Career Day 2027" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="Anliegen" value="Möchte regelmäßig über Neuerungen des Programms, der Aussteller und der Messe informiert werden." />
+        <input name="Name" placeholder="Name" required style="width: 100%; padding: 12px 14px; border: 1px solid #D3D4CF; border-radius: 4px; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #14161C; box-sizing: border-box;" />
+        <input type="email" name="Email" placeholder="E-Mail" required style="width: 100%; padding: 12px 14px; border: 1px solid #D3D4CF; border-radius: 4px; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #14161C; box-sizing: border-box;" />
+        <button type="submit" style="align-self: flex-start; background: #2C4BFF; color: #fff; font-weight: 700; padding: 15px 30px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Senden</button>
+      </form>
     </div>
   </section>
 
