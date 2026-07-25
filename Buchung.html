@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+    body { margin: 0; background: #FFFFFF; }
+    a { color: #2C4BFF; text-decoration: none; }
+    a:hover { color: #16309E; }
+    * { box-sizing: border-box; }
+    .field { width: 100%; padding: 12px 14px; border: 1px solid #D3D4CF; border-radius: 4px; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #14161C; }
+    .field:focus { outline: 2px solid #2C4BFF; outline-offset: 1px; }
+    .opt { display: flex; align-items: flex-start; gap: 12px; padding: 16px; border: 1px solid #E7E7E2; border-radius: 6px; cursor: pointer; }
+  </style>
+</helmet>
+<div style="font-family: 'Lato', Arial, sans-serif; color: #14161C; overflow-x: hidden;">
+  <div style="background: #14161C; padding: 10px 56px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap;">
+    <span style="color: #A6A9B3; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">In Kooperation mit</span>
+    <img src="assets/logo-gu-white.png" alt="Goethe-Universität Frankfurt" style="height: 24px; width: auto;" />
+    <img src="assets/logo-careerservice-white.png" alt="Career Service Goethe-Universität" style="height: 22px; width: auto;" />
+    <img src="assets/logo-unicareers-white.png" alt="uni.careers" style="height: 20px; width: auto;" />
+  </div>
+  <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 56px; background: rgba(255,255,255,0.96); backdrop-filter: blur(6px); border-bottom: 1px solid #E7E7E2; flex-wrap: wrap;">
+    <a href="index.html" style="display: flex; align-items: baseline; gap: 8px; color: #14161C;">
+      <span style="font-weight: 900; font-size: 20px; letter-spacing: -0.01em;">KI Career Day</span>
+      <span style="font-weight: 700; font-size: 13px; color: #2C4BFF;">2027</span>
+    </a>
+    <div style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap;">
+      <a href="index.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Startseite</a>
+      <a href="Programm.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Programm</a>
+      <a href="Fuer-Unternehmen.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Für Unternehmen</a>
+      <a href="Fuer-Studierende.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Für Studierende</a>
+      <a href="Anfahrt.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Anfahrt</a>
+      <a href="Buchung.html" style="background: #2C4BFF; color: #fff; font-weight: 700; padding: 11px 24px; border-radius: 4px; font-size: 14px;">Buchungsformular</a>
+    </div>
+  </nav>
+
+  <section style="padding: 56px 56px 24px;">
+    <div style="max-width: 760px; margin: 0 auto;">
+      <div style="font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: #2C4BFF; margin-bottom: 12px;">Buchungsformular</div>
+      <h1 style="font-size: 36px; font-weight: 900; margin: 0 0 12px;">KI Career Day 2027 – jetzt Standplatz sichern</h1>
+      <p style="font-size: 16px; color: #4A4D57; line-height: 1.6;">Veranstaltung und Paket ankreuzen, Formular ausfüllen und absenden. Wir melden uns nach Eingang der Buchung bei Ihnen.</p>
+    </div>
+  </section>
+
+  <form action="https://formsubmit.co/info@uni-careers.de" method="POST" style="padding: 0 56px 40px;">
+    <input type="hidden" name="_subject" value="Neue Buchung – KI Career Day 2027" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_captcha" value="false" />
+    <div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+
+      <div>
+        <h2 style="font-size: 20px; font-weight: 900; margin-bottom: 16px;">1. Veranstaltung auswählen</h2>
+        <label class="opt">
+          <input type="checkbox" name="Veranstaltung" value="KI Career Day 16.11.2027, Campus Westend" checked style="margin-top: 3px;" />
+          <span><strong>KI Career Day – Karrieren mit KI.</strong><br/><span style="color:#4A4D57; font-size: 14px;">Die Hochschul-Karrieremesse für das KI-Zeitalter · 16.11.2027 · Campus Westend</span></span>
+        </label>
+        <label class="opt" style="margin-top: 12px;">
+          <input type="checkbox" name="Extra_Sonderplatzierung" value="Sonderplatzierung (+600 €)" style="margin-top: 3px;" />
+          <span><strong>Sonderplatzierung</strong> <span style="color:#2C4BFF; font-weight:700;">+600 €</span><br/><span style="color:#4A4D57; font-size: 14px;">stark frequentierte Platzierung auf der Messefläche</span></span>
+        </label>
+      </div>
+
+      <div>
+        <h2 style="font-size: 20px; font-weight: 900; margin-bottom: 16px;">2. Ausstellerpaket wählen</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <label class="opt">
+            <input type="radio" name="Paket" value="Frühbucher (3.490 €)" checked style="margin-top: 3px;" />
+            <span><strong>Frühbucher</strong><br/><span style="color:#2C4BFF; font-weight:700;">3.490 €</span><br/><span style="color:#4A4D57; font-size: 13px;">bei Anmeldung bis 9 Monate vor der Veranstaltung</span></span>
+          </label>
+          <label class="opt">
+            <input type="radio" name="Paket" value="Standard (3.990 €)" style="margin-top: 3px;" />
+            <span><strong>Standard</strong><br/><span style="color:#2C4BFF; font-weight:700;">3.990 €</span></span>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="font-size: 20px; font-weight: 900; margin-bottom: 16px;">3. Extras (optional zubuchbar)</h2>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <label class="opt"><input type="checkbox" name="Extra_Standplatz" value="Großer Standplatz 8m² (1.250 €)" /><span>Großer Standplatz (8 m²) <span style="color:#2C4BFF; font-weight:700;">1.250 €</span></span></label>
+          <label class="opt"><input type="checkbox" name="Extra_Broschuere" value="Anzeige in Messebroschüre (590 €)" /><span>Anzeige in der Messebroschüre <span style="color:#2C4BFF; font-weight:700;">590 €</span></span></label>
+          <label class="opt"><input type="checkbox" name="Extra_Vortrag" value="Vortrag im Bühnenprogramm 45min (490 €)" /><span>Vortrag im Bühnenprogramm (45 Min.) <span style="color:#2C4BFF; font-weight:700;">490 €</span></span></label>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="font-size: 20px; font-weight: 900; margin-bottom: 16px;">4. Unternehmens- und Kontaktdaten</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <input class="field" name="Unternehmen" placeholder="Unternehmen / Institution" required style="grid-column: 1 / -1;" />
+          <input class="field" name="Ansprechpartner" placeholder="Ansprechpartner:in" required />
+          <input class="field" name="Telefon" placeholder="Telefon" />
+          <input class="field" name="Strasse" placeholder="Straße / Nr." style="grid-column: 1 / -1;" />
+          <input class="field" name="PLZOrt" placeholder="PLZ / Ort" style="grid-column: 1 / -1;" />
+          <input class="field" type="email" name="Email" placeholder="E-Mail" required style="grid-column: 1 / -1;" />
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+        <button type="submit" style="background: #2C4BFF; color: #fff; font-weight: 700; padding: 16px 34px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Formular absenden</button>
+        <a href="{{ mailtoHref }}" style="font-weight: 700; font-size: 15px;">…oder per E-Mail senden</a>
+      </div>
+
+      <p style="font-size: 12px; color: #7A7D87; line-height: 1.6;">Zur Buchung wird dieses Formular per E-Mail an info@uni-careers.de gesendet. Die Mitarbeiter*innen von uni.careers setzen sich nach Eingang mit Ihnen in Verbindung.<br/><br/>Preise verstehen sich zzgl. der gesetzlichen Mehrwertsteuer. Die Stornokosten bei einer schriftlichen Absage der Teilnahme betragen ab 12 Wochen vor der Veranstaltung 100 % des Buchungsumfangs. Die campus company GmbH ist berechtigt, bis 10 Wochen vor Veranstaltungstermin die Veranstaltung ohne Angabe von Gründen abzusagen. Es gelten die Allgemeinen Geschäftsbedingungen (AGB). Alle Buchungen unter Vorbehalt verfügbar.</p>
+    </div>
+  </form>
+
+  <footer style="background: #14161C; color: #fff; padding: 40px 56px 24px;">
+    <div style="max-width: 1100px; margin: 0 auto; font-size: 13px; color: #A6A9B3; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+      <span>uni.careers – Projekt der campus company GmbH · Rossertstraße 2, 60323 Frankfurt am Main · T: 0 69.71 58 57 25</span>
+      <div style="display: flex; gap: 20px;">
+        <a href="index.html" style="color: #fff;">Startseite</a>
+        <a href="Impressum.html" style="color: #fff;">Impressum</a>
+        <a href="Datenschutz.html" style="color: #fff;">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const body = [
+      'Buchungsanfrage KI Career Day 2027',
+      '',
+      'Veranstaltung: KI Career Day 16.11.2027, Campus Westend',
+      'Paket: (bitte ergänzen: Frühbucher / Standard)',
+      'Extras: (bitte ergänzen)',
+      '',
+      'Unternehmen: ',
+      'Ansprechpartner:in: ',
+      'Straße / Nr.: ',
+      'PLZ / Ort: ',
+      'E-Mail: ',
+      'Telefon: ',
+    ].join('\n');
+    const mailtoHref = 'mailto:info@uni-careers.de?subject=' + encodeURIComponent('Buchung KI Career Day 2027') + '&body=' + encodeURIComponent(body);
+    return { mailtoHref };
+  }
+}
+</script>
+</body>
+</html>
