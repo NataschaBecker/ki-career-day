@@ -123,4 +123,43 @@
         <input type="hidden" name="subject" value="Vormerkung KI Career Day 2027" />
         <input type="hidden" name="from_name" value="KI Career Day Vormerkung" />
         <input type="hidden" name="Anliegen" value="Möchte regelmäßig über Neuerungen des Programms, der Aussteller und der Messe informiert werden." />
-        <input name="Name" placeholder="Name" required style="width: 100%; padding: 12px 14px; border: 1px solid #D3D4CF;
+        <input name="Name" placeholder="Name" required style="width: 100%; padding: 12px 14px; border: 1px solid #D3D4CF; border-radius: 4px; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #14161C; box-sizing: border-box;" />
+        <input type="email" name="Email" placeholder="E-Mail" required style="width: 100%; padding: 12px 14px; border: 1px solid #D3D4CF; border-radius: 4px; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #14161C; box-sizing: border-box;" />
+        <button type="submit" style="align-self: flex-start; background: #2C4BFF; color: #fff; font-weight: 700; padding: 15px 30px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Senden</button>
+      </form>
+    </div>
+  </section>
+  </sc-if>
+
+  <footer style="background: #14161C; color: #fff; padding: 0 56px 24px;">
+    <div style="max-width: 1100px; margin: 0 auto; font-size: 13px; color: #A6A9B3; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; border-top: 1px solid #2A2D36; padding-top: 20px;">
+      <span>© 2027 uni.careers / campus company GmbH</span>
+      <div style="display: flex; gap: 20px;">
+        <a href="index.html" style="color: #fff;">Startseite</a>
+        <a href="Impressum.html" style="color: #fff;">Impressum</a>
+        <a href="Datenschutz.html" style="color: #fff;">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { showVormerken: false };
+  renderVals() {
+    return {
+      showVormerken: this.state.showVormerken,
+      onVormerkenClick: (e) => {
+        e.preventDefault();
+        this.setState({ showVormerken: true });
+        setTimeout(() => {
+          const el = document.getElementById('vormerken-form');
+          if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 20, behavior: 'smooth' });
+        }, 50);
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>
