@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+    body { margin: 0; background: #FFFFFF; }
+    a { color: #2C4BFF; text-decoration: none; }
+    a:hover { color: #16309E; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    @media (max-width: 760px) {
+      [style*="padding: 10px 56px"] { padding: 8px 20px !important; gap: 10px !important; }
+      [style*="padding: 10px 56px"] > span { display: none !important; }
+      nav[style*="padding: 22px 56px"] { padding: 14px 20px !important; gap: 10px !important; }
+      nav div[style*="gap: 32px"] { gap: 16px !important; flex-wrap: nowrap !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; min-width: 0 !important; flex: 1 1 auto !important; }
+      nav div[style*="gap: 32px"] a { flex-shrink: 0 !important; }
+      nav div[style*="gap: 32px"]::-webkit-scrollbar { display: none; }
+      section[style*="56px"] { padding-left: 20px !important; padding-right: 20px !important; }
+      footer[style*="56px"] { padding-left: 20px !important; padding-right: 20px !important; }
+      div[style*="padding: 0 56px"] { padding-left: 20px !important; padding-right: 20px !important; }
+      form[style*="56px"] { padding-left: 20px !important; padding-right: 20px !important; }
+      [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+      [style*="grid-template-columns: 200px minmax(0, 1fr)"] { grid-template-columns: 1fr !important; }
+      [style*="grid-template-columns: 90px 1fr"] { grid-template-columns: 64px 1fr !important; }
+      footer div[style*="justify-content: space-between"] { flex-direction: column !important; align-items: flex-start !important; }
+    }
+    .field { width: 100%; padding: 12px 14px; border: 1px solid #D3D4CF; border-radius: 4px; font-family: 'Lato', Arial, sans-serif; font-size: 15px; color: #14161C; background: #fff; }
+    .field:focus { outline: 2px solid #2C4BFF; outline-offset: 1px; }
+    .opt { display: flex; align-items: flex-start; gap: 12px; padding: 16px; border: 1px solid #E7E7E2; border-radius: 6px; cursor: pointer; }
+  </style>
+</helmet>
+<div style="font-family: 'Lato', Arial, sans-serif; color: #14161C; overflow-x: hidden;">
+  <div style="background: #14161C; padding: 10px 56px; display: flex; align-items: center; gap: 28px; flex-wrap: wrap;">
+    <span style="color: #A6A9B3; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">In Kooperation mit</span>
+    <img src="assets/logo-gu-white.png" alt="Goethe-Universität Frankfurt" style="height: 24px; width: auto;" />
+    <img src="assets/logo-careerservice-white.png" alt="Career Service Goethe-Universität" style="height: 22px; width: auto;" />
+    <img src="assets/logo-unicareers-white.png" alt="uni.careers" style="height: 20px; width: auto;" />
+  </div>
+  <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 56px; background: rgba(255,255,255,0.96); backdrop-filter: blur(6px); border-bottom: 1px solid #E7E7E2; flex-wrap: wrap;">
+    <a href="index.html" style="display: flex; align-items: baseline; gap: 8px; color: #14161C;">
+      <span style="font-weight: 900; font-size: 20px; letter-spacing: -0.01em;">KI Career Day</span>
+      <span style="font-weight: 700; font-size: 13px; color: #2C4BFF;">2027</span>
+    </a>
+    <div style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap;">
+      <a href="index.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Startseite</a>
+      <a href="Programm.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Programm</a>
+      <a href="Fuer-Unternehmen.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Für Unternehmen</a>
+      <a href="Fuer-Studierende.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Für Studierende</a>
+      <a href="Anfahrt.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Anfahrt</a>
+      <a href="AI-Campus-Network.html" style="color: #2C4BFF; font-weight: 700; font-size: 15px;">AI Campus Network</a>
+      <a href="Buchung.html" style="background: #14161C; color: #fff; font-weight: 700; padding: 11px 24px; border-radius: 4px; font-size: 14px;">Buchungsformular</a>
+    </div>
+  </nav>
+
+  <!-- 01 HERO -->
+  <section data-screen-label="Hero" style="background: linear-gradient(180deg, #4A5068 0%, #14161C 100%); padding: 84px 56px 72px;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="color: #9FB0FF; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 20px;">AI Campus Network · Frankfurt · 2027</div>
+      <h1 style="color: #fff; font-size: clamp(36px, 5.2vw, 66px); font-weight: 900; line-height: 1.04; letter-spacing: -0.015em; margin: 0 0 22px; max-width: 900px; text-wrap: pretty;">KI findet nicht einmal im Jahr statt. Wir auch nicht.</h1>
+      <p style="color: #EDEEF3; font-size: 19px; line-height: 1.55; max-width: 660px; margin: 0 0 36px;">Vier Abende auf dem Campus. Zwölf Speaker. Wissenschaft. Unternehmen. Builder. Eine Community für das KI-Zeitalter.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.18); margin-bottom: 36px; max-width: 860px;">
+        <a href="#termine" style="background: #14161C; padding: 18px 20px; display: block;">
+          <div style="color: #fff; font-weight: 900; font-size: 20px;">11. FEB</div>
+          <div style="color: #A6A9B3; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; margin-top: 4px;">AI IN ACTION</div>
+        </a>
+        <a href="#termine" style="background: #14161C; padding: 18px 20px; display: block;">
+          <div style="color: #fff; font-weight: 900; font-size: 20px;">22. APR</div>
+          <div style="color: #A6A9B3; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; margin-top: 4px;">AI AT WORK</div>
+        </a>
+        <a href="#termine" style="background: #14161C; padding: 18px 20px; display: block;">
+          <div style="color: #fff; font-weight: 900; font-size: 20px;">17. JUN</div>
+          <div style="color: #A6A9B3; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; margin-top: 4px;">BUILD WITH AI</div>
+        </a>
+        <a href="#termine" style="background: #14161C; padding: 18px 20px; display: block;">
+          <div style="color: #fff; font-weight: 900; font-size: 20px;">14. OKT</div>
+          <div style="color: #A6A9B3; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; margin-top: 4px;">ROAD TO KI CAREER DAY</div>
+        </a>
+        <a href="index.html" style="background: #2C4BFF; padding: 18px 20px; display: block;">
+          <div style="color: #fff; font-weight: 900; font-size: 20px;">16. NOV</div>
+          <div style="color: #D6DEFF; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; margin-top: 4px;">KI CAREER DAY</div>
+        </a>
+      </div>
+
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="#anmeldung" style="background: #fff; color: #14161C; font-weight: 700; padding: 15px 30px; border-radius: 4px; font-size: 16px;">Beim nächsten Event dabei sein</a>
+        <a href="#termine" style="color: #fff; font-weight: 700; padding: 15px 30px; border-radius: 4px; font-size: 16px; border: 1px solid rgba(255,255,255,0.6);">Alle vier Abende ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 WARUM JETZT -->
+  <section data-screen-label="Warum jetzt" style="padding: 76px 56px;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 48px; align-items: start;">
+      <div style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: #7A7D87; padding-top: 10px;">Warum jetzt?</div>
+      <div>
+        <h2 style="font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; margin: 0 0 20px; letter-spacing: -0.01em;">Vom Hype in die Anwendung.</h2>
+        <p style="font-size: 18px; line-height: 1.65; color: #4A4D57; max-width: 680px; margin: 0 0 32px; text-wrap: pretty;">KI ist im Alltag angekommen. Jetzt geht es um die Fragen dahinter: Was funktioniert wirklich? Was verändert sich in Unternehmen? Und welche Fähigkeiten brauchen Talente in Zukunft?</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; max-width: 820px;">
+          <div>
+            <div style="width: 44px; height: 2px; background: #2C4BFF; margin-bottom: 16px;"></div>
+            <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px;">Verstehen</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Was technisch möglich ist — erklärt von Menschen, die daran arbeiten.</p>
+          </div>
+          <div>
+            <div style="width: 44px; height: 2px; background: #2C4BFF; margin-bottom: 16px;"></div>
+            <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px;">Anwenden</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Echte Use Cases statt Folien: was in Unternehmen heute schon läuft.</p>
+          </div>
+          <div>
+            <div style="width: 44px; height: 2px; background: #2C4BFF; margin-bottom: 16px;"></div>
+            <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px;">Vernetzen</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Studierende, Forschende, Gründer:innen und Unternehmen an einem Abend.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 DIE VIER VERANSTALTUNGEN -->
+  <section data-screen-label="Termine 2027" id="termine" style="background: #F7F7F4; padding: 76px 56px; border-top: 1px solid #E7E7E2; border-bottom: 1px solid #E7E7E2;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: #2C4BFF; margin-bottom: 14px;">Die Journey 2027</div>
+      <h2 style="font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; margin: 0 0 16px; letter-spacing: -0.01em;">Vier Abende. Ein Ziel.</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #4A4D57; max-width: 680px; margin: 0 0 48px;">Die vier Abende bauen inhaltlich aufeinander auf und führen zum großen Abschluss des Jahres: dem KI Career Day am 16. November 2027.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+
+        <div style="background: #fff; border: 1px solid #E7E7E2; border-radius: 6px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 0; overflow: hidden;">
+          <div style="background: #14161C; color: #fff; padding: 32px 28px;">
+            <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #A6A9B3; text-transform: uppercase;">Donnerstag</div>
+            <div style="font-size: 30px; font-weight: 900; line-height: 1.1; margin-top: 8px;">11. Februar</div>
+            <div style="font-size: 15px; color: #A6A9B3; margin-top: 2px;">2027 · 17:30 Uhr</div>
+          </div>
+          <div style="padding: 32px;">
+            <h3 style="font-size: 26px; font-weight: 900; margin: 0 0 6px; letter-spacing: 0.01em;">AI IN ACTION</h3>
+            <div style="font-size: 17px; font-weight: 700; color: #2C4BFF; margin-bottom: 14px;">Vom Hype in die echte Anwendung.</div>
+            <p style="font-size: 16px; line-height: 1.65; color: #4A4D57; margin: 0 0 22px; max-width: 640px;">Wie wird KI heute bereits konkret eingesetzt? Wissenschaft, Unternehmen und KI-Experten zeigen, was technisch möglich ist, welche Anwendungen bereits funktionieren und wo die Entwicklung hingeht.</p>
+            <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+              <a href="#anmeldung" style="background: #2C4BFF; color: #fff; font-weight: 700; padding: 12px 26px; border-radius: 4px; font-size: 15px;">Anmeldung</a>
+              <span style="font-size: 14px; color: #7A7D87;">Speaker · Programm folgen</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #fff; border: 1px solid #E7E7E2; border-radius: 6px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 0; overflow: hidden;">
+          <div style="background: #14161C; color: #fff; padding: 32px 28px;">
+            <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #A6A9B3; text-transform: uppercase;">Donnerstag</div>
+            <div style="font-size: 30px; font-weight: 900; line-height: 1.1; margin-top: 8px;">22. April</div>
+            <div style="font-size: 15px; color: #A6A9B3; margin-top: 2px;">2027 · 17:30 Uhr</div>
+          </div>
+          <div style="padding: 32px;">
+            <h3 style="font-size: 26px; font-weight: 900; margin: 0 0 6px; letter-spacing: 0.01em;">AI AT WORK</h3>
+            <div style="font-size: 17px; font-weight: 700; color: #2C4BFF; margin-bottom: 14px;">Wie KI unsere Arbeitswelt verändert.</div>
+            <p style="font-size: 16px; line-height: 1.65; color: #4A4D57; margin: 0 0 22px; max-width: 640px;">Was passiert, wenn KI tatsächlich im Unternehmen ankommt? Konkrete Beispiele zeigen, wie sich Prozesse, Aufgaben und Berufsbilder verändern — und welche Fähigkeiten in Zukunft wichtiger werden.</p>
+            <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+              <a href="#anmeldung" style="background: #2C4BFF; color: #fff; font-weight: 700; padding: 12px 26px; border-radius: 4px; font-size: 15px;">Anmeldung</a>
+              <span style="font-size: 14px; color: #7A7D87;">Speaker · Programm folgen</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #fff; border: 1px solid #E7E7E2; border-radius: 6px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 0; overflow: hidden;">
+          <div style="background: #14161C; color: #fff; padding: 32px 28px;">
+            <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #A6A9B3; text-transform: uppercase;">Donnerstag</div>
+            <div style="font-size: 30px; font-weight: 900; line-height: 1.1; margin-top: 8px;">17. Juni</div>
+            <div style="font-size: 15px; color: #A6A9B3; margin-top: 2px;">2027 · 17:30 Uhr</div>
+          </div>
+          <div style="padding: 32px;">
+            <h3 style="font-size: 26px; font-weight: 900; margin: 0 0 6px; letter-spacing: 0.01em;">BUILD WITH AI</h3>
+            <div style="font-size: 17px; font-weight: 700; color: #2C4BFF; margin-bottom: 14px;">Nicht nur über KI reden. Zeigen, was damit möglich ist.</div>
+            <p style="font-size: 16px; line-height: 1.65; color: #4A4D57; margin: 0 0 22px; max-width: 640px;">Modelle, Agents, Tools und neue Anwendungen stehen im Mittelpunkt. Entwickler, Start-ups, Wissenschaft und Technologieunternehmen geben Einblicke in Lösungen, die heute bereits gebaut und eingesetzt werden.</p>
+            <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+              <a href="#anmeldung" style="background: #2C4BFF; color: #fff; font-weight: 700; padding: 12px 26px; border-radius: 4px; font-size: 15px;">Anmeldung</a>
+              <span style="font-size: 14px; color: #7A7D87;">Speaker · Programm folgen</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #fff; border: 1px solid #E7E7E2; border-radius: 6px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 0; overflow: hidden;">
+          <div style="background: #14161C; color: #fff; padding: 32px 28px;">
+            <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #A6A9B3; text-transform: uppercase;">Donnerstag</div>
+            <div style="font-size: 30px; font-weight: 900; line-height: 1.1; margin-top: 8px;">14. Oktober</div>
+            <div style="font-size: 15px; color: #A6A9B3; margin-top: 2px;">2027 · 17:30 Uhr</div>
+          </div>
+          <div style="padding: 32px;">
+            <h3 style="font-size: 26px; font-weight: 900; margin: 0 0 6px; letter-spacing: 0.01em;">THE ROAD TO AI CAREER DAY</h3>
+            <div style="font-size: 17px; font-weight: 700; color: #2C4BFF; margin-bottom: 14px;">KI, Talente und die Arbeitswelt von morgen.</div>
+            <p style="font-size: 16px; line-height: 1.65; color: #4A4D57; margin: 0 0 22px; max-width: 640px;">Welche Kompetenzen werden gesucht? Welche neuen Karrierewege entstehen? Und was erwarten Unternehmen von der nächsten Generation? Der letzte AI-Campus-Abend des Jahres schlägt die direkte Brücke zum großen Finale.</p>
+            <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+              <a href="#anmeldung" style="background: #2C4BFF; color: #fff; font-weight: 700; padding: 12px 26px; border-radius: 4px; font-size: 15px;">Anmeldung</a>
+              <span style="font-size: 14px; color: #7A7D87;">Speaker · Programm folgen</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #2C4BFF; border-radius: 6px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 0; overflow: hidden;">
+          <div style="background: rgba(0,0,0,0.22); color: #fff; padding: 32px 28px;">
+            <div style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #D6DEFF; text-transform: uppercase;">Dienstag</div>
+            <div style="font-size: 30px; font-weight: 900; line-height: 1.1; margin-top: 8px;">16. November</div>
+            <div style="font-size: 15px; color: #D6DEFF; margin-top: 2px;">2027 · Campus Westend</div>
+          </div>
+          <div style="padding: 32px;">
+            <h3 style="font-size: 26px; font-weight: 900; margin: 0 0 6px; color: #fff; letter-spacing: 0.01em;">KI CAREER DAY</h3>
+            <div style="font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 14px;">AND THEN WE ALL MEET.</div>
+            <p style="font-size: 16px; line-height: 1.65; color: #E4E9FF; margin: 0 0 22px; max-width: 640px;">Nach vier Abenden voller Wissen, Anwendungen und Begegnungen kommen Studierende, Absolvent:innen, Unternehmen und die KI-Community beim KI Career Day auf dem Campus Westend zusammen.</p>
+            <a href="index.html" style="background: #fff; color: #14161C; font-weight: 700; padding: 12px 26px; border-radius: 4px; font-size: 15px;">Zum KI Career Day</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 THREE VOICES -->
+  <section data-screen-label="Three Voices" style="padding: 76px 56px;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: #2C4BFF; margin-bottom: 14px;">Three Voices</div>
+      <h2 style="font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; margin: 0 0 16px; letter-spacing: -0.01em;">Drei Perspektiven pro Abend.</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #4A4D57; max-width: 680px; margin: 0 0 44px;">Jeder Abend lebt von drei bewusst unterschiedlichen Stimmen — so entstehen keine drei ähnlichen Vorträge, sondern ein Gespräch.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <div style="border: 1px solid #E7E7E2; border-radius: 6px; overflow: hidden;">
+          <img src="assets/voice-science.jpg" alt="Wissenschaftlerin im Institutsgebäude" style="display: block; width: 100%; aspect-ratio: 1721 / 914; object-fit: cover;" />
+          <div style="padding: 28px;">
+            <h3 style="font-size: 22px; font-weight: 900; margin: 0 0 8px;">SCIENCE</h3>
+            <div style="font-size: 16px; font-weight: 700; color: #2C4BFF; margin-bottom: 10px;">Was kommt als Nächstes?</div>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Professor:innen, Forschende und wissenschaftliche KI-Teams der Goethe-Universität und darüber hinaus.</p>
+          </div>
+        </div>
+        <div style="border: 1px solid #E7E7E2; border-radius: 6px; overflow: hidden;">
+          <img src="assets/voice-business.jpg" alt="Unternehmensvertreter im Foyer" style="display: block; width: 100%; aspect-ratio: 1721 / 914; object-fit: cover;" />
+          <div style="padding: 28px;">
+            <h3 style="font-size: 22px; font-weight: 900; margin: 0 0 8px;">BUSINESS</h3>
+            <div style="font-size: 16px; font-weight: 700; color: #2C4BFF; margin-bottom: 10px;">Was funktioniert heute?</div>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">KI-Leads, CIOs und CDOs, Fachbereiche und Unternehmen mit echten Use Cases.</p>
+          </div>
+        </div>
+        <div style="border: 1px solid #E7E7E2; border-radius: 6px; overflow: hidden;">
+          <img src="assets/voice-builders.jpg" alt="Entwicklerin im Robotiklabor" style="display: block; width: 100%; aspect-ratio: 1721 / 914; object-fit: cover;" />
+          <div style="padding: 28px;">
+            <h3 style="font-size: 22px; font-weight: 900; margin: 0 0 8px;">BUILDERS</h3>
+            <div style="font-size: 16px; font-weight: 700; color: #2C4BFF; margin-bottom: 10px;">Was können wir damit bauen?</div>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Start-ups, Entwickler:innen, AI Labs sowie Model- und Technologieanbieter.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 32px; border: 1px solid #E7E7E2; border-left: 3px solid #2C4BFF; border-radius: 6px; padding: 28px 32px; display: flex; gap: 28px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <p style="font-size: 17px; line-height: 1.6; color: #14161C; margin: 0; max-width: 660px; font-weight: 700;">Du erforschst, entwickelst oder implementierst KI und hast etwas zu zeigen? Bring deine Perspektive auf den Campus.</p>
+        <a href="#speaker" style="background: #14161C; color: #fff; font-weight: 700; padding: 13px 28px; border-radius: 4px; font-size: 15px;">Als Speaker vorstellen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 ABLAUF -->
+  <section data-screen-label="Ablauf des Abends" style="background: #14161C; padding: 76px 56px;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: #9FB0FF; margin-bottom: 14px;">Ablauf des Abends</div>
+      <h2 style="font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; margin: 0 0 16px; color: #fff; letter-spacing: -0.01em;">Kein Seminar. Ein Abend.</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #A6A9B3; max-width: 620px; margin: 0 0 44px;">Drei Impulse, viel Raum für Fragen — und danach Drinks, Podcast und Netzwerk.</p>
+
+      <div style="display: flex; flex-direction: column; max-width: 820px;">
+        <div style="display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 16px 0; border-top: 1px solid #2A2D36;">
+          <div style="color: #9FB0FF; font-weight: 900; font-size: 17px;">17:30</div>
+          <div style="color: #EDEEF3; font-size: 16px;">Doors Open · Check-in · Drinks · Community</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 16px 0; border-top: 1px solid #2A2D36;">
+          <div style="color: #9FB0FF; font-weight: 900; font-size: 17px;">18:00</div>
+          <div style="color: #EDEEF3; font-size: 16px;">Welcome AI Campus Network</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 16px 0; border-top: 1px solid #2A2D36;">
+          <div style="color: #9FB0FF; font-weight: 900; font-size: 17px;">18:10</div>
+          <div style="color: #fff; font-size: 16px; font-weight: 700;">SCIENCE — Impuls + Q&amp;A</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 16px 0; border-top: 1px solid #2A2D36;">
+          <div style="color: #7A7D87; font-weight: 900; font-size: 17px;">18:55</div>
+          <div style="color: #A6A9B3; font-size: 16px;">Change · kurze Pause</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 16px 0; border-top: 1px solid #2A2D36;">
+          <div style="color: #9FB0FF; font-weight: 900; font-size: 17px;">19:10</div>
+          <div style="color: #fff; font-size: 16px; font-weight: 700;">BUSINESS — Impuls + Q&amp;A</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 16px 0; border-top: 1px solid #2A2D36;">
+          <div style="color: #7A7D87; font-weight: 900; font-size: 17px;">19:55</div>
+          <div style="color: #A6A9B3; font-size: 16px;">Change · kurze Pause</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 16px 0; border-top: 1px solid #2A2D36;">
+          <div style="color: #9FB0FF; font-weight: 900; font-size: 17px;">20:10</div>
+          <div style="color: #fff; font-size: 16px; font-weight: 700;">BUILDERS — Impuls + Q&amp;A</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 16px 0; border-top: 1px solid #2A2D36;">
+          <div style="color: #9FB0FF; font-weight: 900; font-size: 17px;">20:55</div>
+          <div style="color: #EDEEF3; font-size: 16px;">Closing · Ausblick auf den nächsten Termin</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 90px 1fr; gap: 24px; padding: 16px 0; border-top: 1px solid #2A2D36; border-bottom: 1px solid #2A2D36;">
+          <div style="color: #9FB0FF; font-weight: 900; font-size: 17px;">21:00</div>
+          <div style="color: #EDEEF3; font-size: 16px;">Drinks · Networking · Podcast · Community</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 WHO'S IN THE ROOM -->
+  <section data-screen-label="Who's in the room" style="padding: 76px 56px;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: #2C4BFF; margin-bottom: 14px;">Who's in the room?</div>
+      <h2 style="font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; margin: 0 0 16px; letter-spacing: -0.01em;">Unterschiedliche Perspektiven, ein gemeinsames Thema.</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #4A4D57; max-width: 680px; margin: 0 0 36px;">Der Abend funktioniert, weil im Raum nicht alle dasselbe machen.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; max-width: 900px;">
+        <span style="border: 1px solid #D3D4CF; border-radius: 100px; padding: 10px 20px; font-size: 15px; font-weight: 700;">Studierende</span>
+        <span style="border: 1px solid #D3D4CF; border-radius: 100px; padding: 10px 20px; font-size: 15px; font-weight: 700;">Absolvent:innen</span>
+        <span style="border: 1px solid #D3D4CF; border-radius: 100px; padding: 10px 20px; font-size: 15px; font-weight: 700;">Alumni</span>
+        <span style="border: 1px solid #D3D4CF; border-radius: 100px; padding: 10px 20px; font-size: 15px; font-weight: 700;">Führungskräfte</span>
+        <span style="border: 1px solid #D3D4CF; border-radius: 100px; padding: 10px 20px; font-size: 15px; font-weight: 700;">Gründer:innen</span>
+        <span style="border: 1px solid #D3D4CF; border-radius: 100px; padding: 10px 20px; font-size: 15px; font-weight: 700;">Entwickler:innen</span>
+        <span style="border: 1px solid #D3D4CF; border-radius: 100px; padding: 10px 20px; font-size: 15px; font-weight: 700;">Professor:innen</span>
+        <span style="border: 1px solid #D3D4CF; border-radius: 100px; padding: 10px 20px; font-size: 15px; font-weight: 700;">Forschende</span>
+        <span style="border: 1px solid #D3D4CF; border-radius: 100px; padding: 10px 20px; font-size: 15px; font-weight: 700;">Unternehmensvertreter:innen</span>
+      </div>
+      <div style="margin-top: 44px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; max-width: 1000px;">
+        <div>
+          <div style="width: 44px; height: 2px; background: #2C4BFF; margin-bottom: 16px;"></div>
+          <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px;">Führende Köpfe treffen</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">KI, Wissenschaft, Start-ups und Unternehmen an einem Abend — ohne Anmeldehürde.</p>
+        </div>
+        <div>
+          <div style="width: 44px; height: 2px; background: #2C4BFF; margin-bottom: 16px;"></div>
+          <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px;">Anwendungen erleben</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Echte Technologien und Karrierechancen direkt aus der Praxis.</p>
+        </div>
+        <div>
+          <div style="width: 44px; height: 2px; background: #2C4BFF; margin-bottom: 16px;"></div>
+          <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px;">Orientierung bekommen</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Welche Skills zählen morgen? Und wo willst du damit hin?</p>
+        </div>
+        <div>
+          <div style="width: 44px; height: 2px; background: #2C4BFF; margin-bottom: 16px;"></div>
+          <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px;">Netzwerk aufbauen</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Vier Abende, vier Gelegenheiten — bis zum KI Career Day im November.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 UNTERNEHMEN -->
+  <section data-screen-label="Unternehmen" style="background: #F7F7F4; padding: 76px 56px; border-top: 1px solid #E7E7E2;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: #2C4BFF; margin-bottom: 14px;">Für Unternehmen</div>
+      <h2 style="font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; margin: 0 0 16px; letter-spacing: -0.01em;">Nicht nur Aussteller. Teil der Community.</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #4A4D57; max-width: 720px; margin: 0 0 44px;">Unternehmen können beim KI Career Day nicht nur Talente kennenlernen. Sie können bereits über das gesamte Jahr Teil des AI Campus Network werden — Wissen teilen, Perspektiven einbringen und mit der nächsten Generation ins Gespräch kommen.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 36px;">
+        <div style="background: #fff; border: 1px solid #E7E7E2; border-radius: 6px; padding: 32px;">
+          <h3 style="font-size: 20px; font-weight: 900; margin: 0 0 12px;">SHARE KNOWLEDGE</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Expert:innen und echte Use Cases einbringen — als Impuls auf der Bühne oder im Gespräch danach.</p>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E7E2; border-radius: 6px; padding: 32px;">
+          <h3 style="font-size: 20px; font-weight: 900; margin: 0 0 12px;">MEET TALENT</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Frühzeitig mit KI-affinen Studierenden und Young Professionals in Kontakt kommen.</p>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E7E2; border-radius: 6px; padding: 32px;">
+          <h3 style="font-size: 20px; font-weight: 900; margin: 0 0 12px;">ENABLE THE COMMUNITY</h3>
+          <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Einzelne Abende oder die gesamte Reihe ermöglichen — als sichtbarer Enabler der Community.</p>
+        </div>
+      </div>
+
+      <p style="font-size: 15px; line-height: 1.65; color: #7A7D87; max-width: 720px; margin: 0 0 28px;">Inhalte werden kuratiert: Partner erhalten keine automatische Redezeit. Das schützt die Glaubwürdigkeit der Reihe — und macht sie für Studierende relevant.</p>
+      <a href="Fuer-Unternehmen.html" style="font-weight: 700; font-size: 16px;">Alle Infos für Unternehmen →</a>
+    </div>
+  </section>
+
+  <!-- 08 PARTNER -->
+  <section data-screen-label="Partner" style="padding: 76px 56px; border-top: 1px solid #E7E7E2;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: #2C4BFF; margin-bottom: 14px;">Partner</div>
+      <h2 style="font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; margin: 0 0 16px; letter-spacing: -0.01em;">Die Enabler der Community.</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #4A4D57; max-width: 680px; margin: 0 0 44px;">Das AI Campus Network entsteht gemeinsam mit Partnern aus Wissenschaft, Wirtschaft und Technologie.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+        <div>
+          <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #7A7D87; margin-bottom: 14px;">Founding Partner</div>
+          <div style="height: 96px; border: 1px dashed #D3D4CF; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #9A9CA6; font-size: 13px;">Logo folgt</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #7A7D87; margin-bottom: 14px;">Technology Partner</div>
+          <div style="height: 96px; border: 1px dashed #D3D4CF; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #9A9CA6; font-size: 13px;">Logo folgt</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #7A7D87; margin-bottom: 14px;">Community Partner</div>
+          <div style="height: 96px; border: 1px dashed #D3D4CF; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #9A9CA6; font-size: 13px;">Logo folgt</div>
+        </div>
+        <div>
+          <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #7A7D87; margin-bottom: 14px;">Mobility Partner</div>
+          <div style="height: 96px; border: 1px dashed #D3D4CF; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #9A9CA6; font-size: 13px;">Logo folgt</div>
+        </div>
+      </div>
+      <p style="font-size: 13px; color: #9A9CA6; margin: 20px 0 0;">Es werden ausschließlich bestätigte Partner gezeigt.</p>
+    </div>
+  </section>
+
+  <!-- 09 AI CAMPUS ON TOUR -->
+  <section data-screen-label="AI Campus on Tour" style="background: #F7F7F4; padding: 76px 56px; border-top: 1px solid #E7E7E2;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: #2C4BFF; margin-bottom: 14px;">AI Campus on Tour</div>
+      <h2 style="font-size: clamp(28px, 3.4vw, 42px); font-weight: 900; margin: 0 0 16px; letter-spacing: -0.01em;">Die Community endet nicht um 21 Uhr.</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #4A4D57; max-width: 680px; margin: 0 0 44px;">Zwischen den Abenden bleibt das Netzwerk sichtbar — im Podcast, in Interviews und auf dem Campus.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 24px;">
+        <div style="background: #fff; border: 1px solid #E7E7E2; border-radius: 6px; overflow: hidden;">
+          <img src="assets/tour-podcast.jpg" alt="Podcast-Aufnahme mit zwei Gästen" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: right bottom;" />
+          <div style="padding: 24px;">
+            <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px;">Podcast</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Gespräche vom Abend — mitgeschnitten und weitergedacht.</p>
+          </div>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E7E2; border-radius: 6px; overflow: hidden;">
+          <img src="assets/tour-interviews.jpg" alt="Gespräch zwischen zwei Personen am Rand einer Abendveranstaltung" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: right bottom;" />
+          <div style="padding: 24px;">
+            <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px;">Speaker-Interviews</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Kurze Formate mit den Stimmen aus Science, Business und Builders.</p>
+          </div>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E7E2; border-radius: 6px; overflow: hidden;">
+          <img src="assets/tour-campus-stories.jpg" alt="Vier Studierende betrachten gemeinsam ein Robotik-Modell im Foyer der Universität" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: right bottom;" />
+          <div style="padding: 24px;">
+            <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px;">Campus Stories</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Studierende, Projekte und Ideen aus dem KI-Umfeld der Goethe-Universität.</p>
+          </div>
+        </div>
+        <div style="background: #fff; border: 1px solid #E7E7E2; border-radius: 6px; overflow: hidden;">
+          <img src="assets/tour-roadshow.jpg" alt="Besuchergruppe bei einer Führung durch eine Produktionshalle" style="display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: right bottom;" />
+          <div style="padding: 24px;">
+            <h3 style="font-size: 18px; font-weight: 700; margin: 0 0 8px;">Roadshow</h3>
+            <p style="font-size: 15px; line-height: 1.6; color: #4A4D57; margin: 0;">Das Netzwerk zu Gast bei Unternehmen und Instituten in der Region.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANMELDUNG -->
+  <section data-screen-label="Anmeldung" id="anmeldung" style="padding: 76px 56px; border-top: 1px solid #E7E7E2;">
+    <div style="max-width: 760px; margin: 0 auto;">
+      <div style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: #2C4BFF; margin-bottom: 14px;">Anmeldung</div>
+      <h2 style="font-size: clamp(28px, 3.4vw, 40px); font-weight: 900; margin: 0 0 16px; letter-spacing: -0.01em;">Beim nächsten Event dabei sein.</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #4A4D57; margin: 0 0 36px;">Termin auswählen, Daten eintragen, fertig. Die Teilnahme ist für Studierende kostenfrei. Du bekommst die Einladung mit Programm und Speakern, sobald sie stehen.</p>
+    </div>
+  </section>
+
+  <form action="https://api.web3forms.com/submit" method="POST" style="padding: 0 56px 76px;">
+    <input type="hidden" name="access_key" value="52f49ed5-328e-4dec-bfeb-a7a81d0bcb80" />
+    <input type="hidden" name="subject" value="Anmeldung – AI Campus Network 2027" />
+    <input type="hidden" name="from_name" value="AI Campus Network Anmeldung" />
+    <div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px;">
+      <div>
+        <h3 style="font-size: 18px; font-weight: 900; margin: 0 0 16px;">1. Termin auswählen</h3>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <label class="opt"><input type="checkbox" name="Termin_11_Februar" value="11.02.2027 – AI IN ACTION" style="margin-top: 3px;" /><span><strong>Do., 11. Februar 2027 — AI IN ACTION</strong><br/><span style="color:#4A4D57; font-size: 14px;">Vom Hype in die echte Anwendung</span></span></label>
+          <label class="opt"><input type="checkbox" name="Termin_22_April" value="22.04.2027 – AI AT WORK" style="margin-top: 3px;" /><span><strong>Do., 22. April 2027 — AI AT WORK</strong><br/><span style="color:#4A4D57; font-size: 14px;">Wie KI unsere Arbeitswelt verändert</span></span></label>
+          <label class="opt"><input type="checkbox" name="Termin_17_Juni" value="17.06.2027 – BUILD WITH AI" style="margin-top: 3px;" /><span><strong>Do., 17. Juni 2027 — BUILD WITH AI</strong><br/><span style="color:#4A4D57; font-size: 14px;">Modelle, Agents, Tools</span></span></label>
+          <label class="opt"><input type="checkbox" name="Termin_14_Oktober" value="14.10.2027 – THE ROAD TO AI CAREER DAY" style="margin-top: 3px;" /><span><strong>Do., 14. Oktober 2027 — THE ROAD TO AI CAREER DAY</strong><br/><span style="color:#4A4D57; font-size: 14px;">Talente, Skills und die Arbeitswelt von morgen</span></span></label>
+          <label class="opt"><input type="checkbox" name="Alle_Termine" value="Ja, über alle Termine informieren" style="margin-top: 3px;" /><span><strong>Ich möchte über alle Termine informiert werden</strong></span></label>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size: 18px; font-weight: 900; margin: 0 0 16px;">2. Deine Daten</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <input class="field" name="Vorname" placeholder="Vorname" required />
+          <input class="field" name="Nachname" placeholder="Nachname" required />
+          <input class="field" type="email" name="Email" placeholder="E-Mail" required style="grid-column: 1 / -1;" />
+          <input class="field" name="Status" placeholder="Studium / Beruf / Unternehmen" style="grid-column: 1 / -1;" />
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
+        <button type="submit" style="background: #2C4BFF; color: #fff; font-weight: 700; padding: 16px 34px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Anmeldung absenden</button>
+      </div>
+      <p style="font-size: 12px; color: #7A7D87; line-height: 1.6; margin: 0;">Mit dem Absenden werden deine Angaben an die CAMPUSERVICE GmbH übermittelt und ausschließlich zur Organisation des AI Campus Network verwendet. Details in der <a href="Datenschutz.html">Datenschutzerklärung</a>.</p>
+    </div>
+  </form>
+
+  <!-- SPEAKER -->
+  <section data-screen-label="Speaker werden" id="speaker" style="background: #F7F7F4; padding: 76px 56px; border-top: 1px solid #E7E7E2;">
+    <div style="max-width: 760px; margin: 0 auto;">
+      <div style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: #2C4BFF; margin-bottom: 14px;">Speaker</div>
+      <h2 style="font-size: clamp(28px, 3.4vw, 40px); font-weight: 900; margin: 0 0 16px; letter-spacing: -0.01em;">Bring deine Perspektive auf den Campus.</h2>
+      <p style="font-size: 17px; line-height: 1.65; color: #4A4D57; margin: 0 0 32px;">Du erforschst, entwickelst oder implementierst KI und hast etwas zu zeigen? Erzähl uns kurz, worum es geht — wir melden uns.</p>
+      <form action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 16px;">
+        <input type="hidden" name="access_key" value="52f49ed5-328e-4dec-bfeb-a7a81d0bcb80" />
+        <input type="hidden" name="subject" value="Speaker-Interesse – AI Campus Network 2027" />
+        <input type="hidden" name="from_name" value="AI Campus Network Speaker-Formular" />
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <input class="field" name="Name" placeholder="Name" required />
+          <input class="field" name="Organisation" placeholder="Universität / Unternehmen / Start-up" required />
+          <input class="field" type="email" name="Email" placeholder="E-Mail" required style="grid-column: 1 / -1;" />
+        </div>
+        <select class="field" name="Perspektive">
+          <option value="">Perspektive auswählen …</option>
+          <option value="SCIENCE">SCIENCE — Was kommt als Nächstes?</option>
+          <option value="BUSINESS">BUSINESS — Was funktioniert heute?</option>
+          <option value="BUILDERS">BUILDERS — Was können wir damit bauen?</option>
+        </select>
+        <textarea class="field" name="Thema" rows="4" placeholder="Worum würde es gehen? (2–3 Sätze reichen)"></textarea>
+        <div>
+          <button type="submit" style="background: #14161C; color: #fff; font-weight: 700; padding: 16px 34px; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Perspektive einreichen</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 10 FINALE -->
+  <section data-screen-label="Finale" style="background: #14161C; padding: 84px 56px;">
+    <div style="max-width: 1180px; margin: 0 auto;">
+      <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 40px;">
+        <span style="color: #7A7D87; font-weight: 900; font-size: clamp(20px, 2.6vw, 30px); letter-spacing: 0.02em;">FEB</span>
+        <span style="color: #3C4050; font-size: 22px;">→</span>
+        <span style="color: #7A7D87; font-weight: 900; font-size: clamp(20px, 2.6vw, 30px); letter-spacing: 0.02em;">APR</span>
+        <span style="color: #3C4050; font-size: 22px;">→</span>
+        <span style="color: #A6A9B3; font-weight: 900; font-size: clamp(20px, 2.6vw, 30px); letter-spacing: 0.02em;">JUN</span>
+        <span style="color: #3C4050; font-size: 22px;">→</span>
+        <span style="color: #EDEEF3; font-weight: 900; font-size: clamp(20px, 2.6vw, 30px); letter-spacing: 0.02em;">OKT</span>
+        <span style="color: #3C4050; font-size: 22px;">→</span>
+        <span style="color: #9FB0FF; font-weight: 900; font-size: clamp(20px, 2.6vw, 30px); letter-spacing: 0.02em;">16. NOV</span>
+      </div>
+      <h2 style="color: #fff; font-size: clamp(38px, 6.4vw, 84px); font-weight: 900; line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 24px;">AND THEN<br/>WE ALL MEET.</h2>
+      <p style="color: #A6A9B3; font-size: 19px; line-height: 1.55; max-width: 620px; margin: 0 0 36px;">Am 16. November 2027 kommt alles zusammen: KI Career Day auf dem Campus Westend — die Hochschul-Karrieremesse für das KI-Zeitalter.</p>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="index.html" style="background: #2C4BFF; color: #fff; font-weight: 700; padding: 15px 30px; border-radius: 4px; font-size: 16px;">KI Career Day entdecken</a>
+        <a href="#anmeldung" style="color: #fff; font-weight: 700; padding: 15px 30px; border-radius: 4px; font-size: 16px; border: 1px solid rgba(255,255,255,0.6);">Beim nächsten Event dabei sein</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #14161C; color: #fff; padding: 0 56px 28px;">
+    <div style="max-width: 1180px; margin: 0 auto; border-top: 1px solid #2A2D36; padding-top: 40px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; margin-bottom: 36px;">
+        <div>
+          <div style="font-weight: 900; font-size: 19px; margin-bottom: 12px;">KI Career Day 2027</div>
+          <p style="color: #A6A9B3; font-size: 14px; max-width: 300px;">16. November 2027 · Campus Westend, Goethe-Universität Frankfurt</p>
+        </div>
+        <div style="display: flex; gap: 48px; flex-wrap: wrap;">
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <span style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #A6A9B3;">Seiten</span>
+            <a href="AI-Campus-Network.html" style="color: #fff;">AI Campus Network</a>
+            <a href="Programm.html" style="color: #fff;">Programm</a>
+            <a href="Fuer-Unternehmen.html" style="color: #fff;">Für Unternehmen</a>
+            <a href="Fuer-Studierende.html" style="color: #fff;">Für Studierende</a>
+            <a href="Anfahrt.html" style="color: #fff;">Anfahrt</a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <span style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #A6A9B3;">Kontakt</span>
+            <span style="color: #A6A9B3; font-size: 14px;">CAMPUSERVICE GmbH – Servicegesellschaft der Goethe-Universität Frankfurt am Main</span>
+            <span style="color: #A6A9B3; font-size: 14px;">Rossertstraße 2, 60323 Frankfurt am Main</span>
+            <a href="mailto:cc@uni-frankfurt.campuservice.de" style="color: #fff;">cc@uni-frankfurt.campuservice.de</a>
+            <span style="color: #A6A9B3; font-size: 14px;">T: +49 (0)69 – 71 58 57 – 121</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <span style="font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #A6A9B3;">Rechtliches</span>
+            <a href="Impressum.html" style="color: #fff;">Impressum</a>
+            <a href="Datenschutz.html" style="color: #fff;">Datenschutz</a>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #2A2D36; padding-top: 20px; font-size: 13px; color: #A6A9B3;">© 2026 | CAMPUSERVICE GmbH Servicegesellschaft der Goethe-Universität Frankfurt am Main</div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>
