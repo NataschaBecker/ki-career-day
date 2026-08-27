@@ -15,13 +15,19 @@
     a:hover { color: #16309E; }
     * { box-sizing: border-box; }
 
+    @media (max-width: 1240px) {
+      nav[style*="padding: 22px 40px"] { padding: 14px 24px !important; gap: 12px !important; }
+      nav div[style*="gap: 22px"] { gap: 18px !important; flex-wrap: nowrap !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; min-width: 0 !important; flex: 1 1 auto !important; }
+      nav div[style*="gap: 22px"] a { flex-shrink: 0 !important; }
+      nav div[style*="gap: 22px"]::-webkit-scrollbar { display: none; }
+    }
     @media (max-width: 760px) {
       [style*="padding: 10px 56px"] { padding: 8px 20px !important; gap: 10px !important; }
       [style*="padding: 10px 56px"] > span { display: none !important; }
-      nav[style*="padding: 22px 56px"] { padding: 14px 20px !important; gap: 10px !important; }
-      nav div[style*="gap: 32px"] { gap: 16px !important; flex-wrap: nowrap !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; min-width: 0 !important; flex: 1 1 auto !important; }
-      nav div[style*="gap: 32px"] a { flex-shrink: 0 !important; }
-      nav div[style*="gap: 32px"]::-webkit-scrollbar { display: none; }
+      nav[style*="padding: 22px 40px"] { padding: 14px 20px !important; gap: 10px !important; }
+      nav div[style*="gap: 22px"] { gap: 16px !important; flex-wrap: nowrap !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; min-width: 0 !important; flex: 1 1 auto !important; }
+      nav div[style*="gap: 22px"] a { flex-shrink: 0 !important; }
+      nav div[style*="gap: 22px"]::-webkit-scrollbar { display: none; }
       section[style*="56px"] { padding-left: 20px !important; padding-right: 20px !important; }
       footer[style*="56px"] { padding-left: 20px !important; padding-right: 20px !important; }
       div[style*="padding: 0 56px"] { padding-left: 20px !important; padding-right: 20px !important; }
@@ -45,19 +51,19 @@
     <img src="assets/logo-careerservice-white.png" alt="Career Service Goethe-Universität" style="height: 22px; width: auto;" />
     <img src="assets/logo-unicareers-white.png" alt="uni.careers" style="height: 20px; width: auto;" />
   </div>
-  <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 56px; background: rgba(255,255,255,0.96); backdrop-filter: blur(6px); border-bottom: 1px solid #E7E7E2; flex-wrap: wrap;">
+  <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 22px 40px; background: rgba(255,255,255,0.96); backdrop-filter: blur(6px); border-bottom: 1px solid #E7E7E2; flex-wrap: wrap;">
     <a href="index.html" style="display: flex; align-items: baseline; gap: 8px; color: #14161C;">
       <span style="font-weight: 900; font-size: 20px; letter-spacing: -0.01em;">KI Career Day</span>
       <span style="font-weight: 700; font-size: 13px; color: #2C4BFF;">2027</span>
     </a>
-    <div style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap;">
+    <div style="display: flex; align-items: center; gap: 22px; flex-wrap: wrap;">
       <a href="index.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Startseite</a>
       <a href="Programm.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Programm</a>
       <a href="Fuer-Unternehmen.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Für Unternehmen</a>
       <a href="Fuer-Studierende.html" style="color: #2C4BFF; font-weight: 700; font-size: 15px;">Für Studierende</a>
       <a href="Anfahrt.html" style="color: #14161C; font-weight: 400; font-size: 15px;">Anfahrt</a>
-      <a href="AI-Campus-Network.html" style="color: #2C4BFF; font-weight: 700; font-size: 15px;">AI Campus Network</a>
-      <a href="Buchung.html" style="background: #14161C; color: #fff; font-weight: 700; padding: 11px 24px; border-radius: 4px; font-size: 14px;">Buchungsformular</a>
+      <a href="AI-Campus-Network.html" style="background: #C4232B; color: #fff; font-weight: 700; padding: 9px 16px; border-radius: 4px; font-size: 14px; white-space: nowrap;">AI campus network</a>
+      <a href="Buchung.html" style="background: #14161C; color: #fff; font-weight: 700; padding: 9px 16px; border-radius: 4px; font-size: 14px; white-space: nowrap;">Buchungsformular</a>
     </div>
   </nav>
 
